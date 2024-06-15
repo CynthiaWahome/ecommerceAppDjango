@@ -2,6 +2,10 @@ from django.shortcuts import get_object_or_404, render
 from . models import Customer, Product
 
 # Create your views here.
+
+def home(request):
+    return render(request, 'ecommerceApp/home.html')
+
 def product_list(request):
     products = Product.objects.all()
     context = {
@@ -21,15 +25,15 @@ def customer_list(request):
     context = {
             'customers': customers
             }
-    return render(request, 'page.html', context)
+    return render(request, 'ecommerceApp/customer_list.html', context)
 
-def customer_detail(request, pk):
+def customer_details(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
     context = {
             'customers' : customer
 
     }
-    return render(request, 'ecommerceApp/customer_detail.html', context)
+    return render(request, 'ecommerceApp/customer_details.html', context)
 
 
     
