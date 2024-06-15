@@ -1,11 +1,36 @@
-from django.shortcuts import render
-from . models import Product
+from django.shortcuts import get_object_or_404, render
+from . models import Customer, Product
 
 # Create your views here.
 def product_list(request):
     products = Product.objects.all()
     context = {
-        'products': products,
+        'products': products
         }
     return render(request,'ecommerceApp/product_list.html',context)
+
+def product_details(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    context = {
+            'product': product
+            }
+    return render(request, 'ecommerceApp/product_details.html', context)
+
+def customer_list(request):
+    customers = Customer.objects.all()
+    context = {
+            'customers': customers
+            }
+    return render(request, 'page.html', context)
+
+def customer_detail(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    context = {
+            'customers' : customer
+
+    }
+    return render(request, 'ecommerceApp/customer_detail.html', context)
+
+
+    
 # Create your views here.

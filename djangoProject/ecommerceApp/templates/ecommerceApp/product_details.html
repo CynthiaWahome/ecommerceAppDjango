@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{product.name}}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'ecommerceApp/style.css' %}">
+</head>
+<body>
+
+    
+    <ul>
+           {% for product in products %}
+        <li>
+            <h2>{{product.name}} </h2>
+            <p>  {{ product.description}}</p>
+            <p> Price: Kshs.{{product.price}}</p>
+            <img src="{{product.image.url}}" alt="{{product.name}}">
+            <p> Available: {{product.available|yesno:"Yes,No"}} </p>
+
+        </li>
+    {% endfor %}
+    
+    
+</body>
+</ul>
+{% comment %} <a href ="{% url 'ecommerceApp:product_list' %}"> Back to Product List</a> {% endcomment %}
+</html>
