@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ecommerceApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'ecommerceApp/style.css' %}">
+</head>
+<body>
+  <h1>Welcome to Cynthia's E-commerce Website</h1>
+  <nav>
+    <ul>
+      <li><a href="{% url 'ecommerceApp:product_list' %}">Products</a></li>
+      <li><a href="{% url 'ecommerceApp:customer_list' %}">Customers</a></li>
+    </ul>
+  </nav>
+</body>
+
+</html>

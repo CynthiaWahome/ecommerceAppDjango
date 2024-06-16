@@ -18,7 +18,7 @@
             <p> Price: Kshs.{{product.price}}</p>
             <img src="{{product.image.url}}" alt="{{product.name}}">
             <p> Available: {{product.available|yesno:"Yes,No"}} </p>
-
+            <a href="{% url 'ecommerceApp:product_list' %}">Back to Product List</a>
         </li>
     {% endfor %}
     

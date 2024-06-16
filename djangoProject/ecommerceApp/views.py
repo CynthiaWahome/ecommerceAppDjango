@@ -30,7 +30,7 @@ def customer_list(request):
 def customer_details(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
     context = {
-            'customers' : customer
+            'customer' : customer
 
     }
     return render(request, 'ecommerceApp/customer_details.html', context)

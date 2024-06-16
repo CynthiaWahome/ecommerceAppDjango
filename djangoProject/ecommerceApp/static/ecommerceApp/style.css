@@ -1,0 +1,14 @@
+body {
+    background: white url("./media/images/background3.JPG") no-repeat;
+    background-size: cover; /* Ensures the background image covers the entire element */
+    background-position: center; /* Centers the background image */
+    height: 100vh; /* Makes the body take up the full viewport height */
+    margin: 0; /* Removes default margin */
+}
+h1 {
+    color: aqua;
+
+}
+a, p, h2, h3 {
+    color: chartreuse;
+}

@@ -12,7 +12,7 @@
   <ul>
     {% for customer in customers %}
       <li>
-        <a href="{% url 'ecommerceApp:customer_detail' customer.pk %}">
+        <a href="{% url 'ecommerceApp:customer_details' customer.pk %}">
           {{ customer.first_name }} {{ customer.last_name }} {{ customer.email }}
         </a>
       </li>
